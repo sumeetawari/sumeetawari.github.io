@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>ameet</title>
+    <title>parents</title>
     <style>
         body {
             margin: 0;
             padding: 0;
-            background-image: url('https://sumeetawari.github.io/Images/background.png');
+            background-image: url('');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
             font-family: Arial, sans-serif;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .content {
+            width: 80%;
+            max-width: 800px;
+            text-align: center;
+        }
+        
+        .content p {
+            margin: 1.5em 0;
         }
 
         .overlay {
@@ -45,13 +61,12 @@
     </style>
 </head>
 <body>
-    <h1>
-        मी तुमच्‍या चेहऱ्यावर हसू आणू शकतो,
-तुमच्‍या  डोळ्यात अश्रू,
-किंवा अगदी तुमच्या मनात एक विचार.
-पण, मी अजून दिसत नाही.
-मी काय आहे?
-    </h1>
+    <div class="content">
+        <p>मी तुमच्‍या चेहऱ्यावर हसू आणू शकतो,</p>
+        <p>तुमच्‍या  डोळ्यात अश्रू, किंवा अगदी तुमच्या मनात एक विचार.</p>
+        <p>पण, मी अजून दिसत नाही.</p>
+        <p>मी काय आहे?</p>
+    </div>
     <div class="overlay" id="overlay">
         <img src="https://miro.medium.com/v2/resize:fit:700/1*38QD8tbJ8z7Q4WyI9VC6QA.png">
     </div>
