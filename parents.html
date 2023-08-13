@@ -59,27 +59,6 @@
                 transform: scale(1.2);
             }
         }
-
-        @keyframes pop {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.2);
-                opacity: 0.7;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-
-        .question-mark {
-            position: absolute;
-            font-size: 24px;
-            animation: pop 4s infinite;
-        }
     </style>
 </head>
 <body>
@@ -98,31 +77,6 @@
         setTimeout(function() {
             document.getElementById('overlay').style.opacity = '1';
         }, 40000); // 5000 milliseconds = 5 seconds
-
-                // Generate random positions for question marks
-        function getRandomPosition() {
-            var maxX = window.innerWidth - 30; // Adjust size of question mark
-            var maxY = window.innerHeight - 30; // Adjust size of question mark
-            var x = Math.random() * maxX;
-            var y = Math.random() * maxY;
-            return { x: x, y: y };
-        }
-
-        // Create and place question marks
-        function createQuestionMarks() {
-            for (var i = 0; i < 20; i++) { // Adjust the number of question marks
-                var position = getRandomPosition();
-                var questionMark = document.createElement('div');
-                questionMark.className = 'question-mark';
-                questionMark.style.left = position.x + 'px';
-                questionMark.style.top = position.y + 'px';
-                questionMark.textContent = '?';
-                document.body.appendChild(questionMark);
-            }
-        }
-
-        // Call the function to create question marks
-        createQuestionMarks();
     </script>
 
     
