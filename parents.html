@@ -73,10 +73,31 @@
     </div>
     
     <script>
-        // Show overlay after a certain delay
-        setTimeout(function() {
-            document.getElementById('overlay').style.opacity = '1';
-        }, 40000); // 5000 milliseconds = 5 seconds
+        // // Show overlay after a certain delay
+        // setTimeout(function() {
+        //     document.getElementById('overlay').style.opacity = '1';
+        // }, 40000); // 5000 milliseconds = 5 seconds
+
+        async function fetchStatus() {
+            try {
+                const response = await fetch('https://sumeetawari.github.io/status.json');
+                const data = await response.json();
+                const status = data.status;
+
+                const overlay = document.getElementById('overlay');
+                if (status) {
+                    overlay.style.display = 'flex';
+                    overlay.style.opacity = '1';
+                } else {
+                    overlay.style.display = 'none';
+                }
+            } catch (error) {
+                console.error('Error fetching status:', error);
+            }
+        }
+
+        // Fetch status every 5 seconds
+        setInterval(fetchStatus, 3000);
     </script>
 
     
