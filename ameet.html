@@ -54,6 +54,27 @@
         setTimeout(function() {
             document.getElementById('overlay').style.opacity = '1';
         }, 40000); // 5000 milliseconds = 5 seconds
+
+        function pollForResponse() {
+            const responseElement = document.getElementById('response');
+            
+            function fetchResponse() {
+                fetch('https://sumeetawari.github.io/input.html')
+                    .then(response => response.text())
+                    .then(text => {
+                        console.log(text);
+                        responseElement.textContent = text;
+                        setTimeout(fetchResponse, 3000); // Poll every 3 seconds
+                    })
+                    .catch(error => {
+                        console.error('Error fetching response:', error);
+                    });
+            }
+            
+            fetchResponse();
+        }
+        
+        pollForResponse();
     </script>
 </body>
 </html>
